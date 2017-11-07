@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :require_access, only: %i[new create]
 
   def index
-    @posts = Post.all.order(:created_at)
+    @posts = Post.lastest
   end
 
   def new

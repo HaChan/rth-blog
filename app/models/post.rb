@@ -4,6 +4,8 @@ class Post < ApplicationRecord
 
   delegate :email, to: :user, prefix: true, allow_nil: true
 
+  scope :lastest, ->{order(created_at: :desc)}
+
   def created_as_word
     created_at.to_formatted_s(:long)
   end

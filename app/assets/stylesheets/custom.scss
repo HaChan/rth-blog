@@ -13,3 +13,20 @@ body {
     height: 350px;
   }
 }
+
+li {
+  a.dropdown-toggle {
+    color: #fff;
+  }
+}
+
+.dropdown-menu {
+  li {
+    a {
+      color: #343a40;
+    }
+  }
+}
+.dropdown-item:active {
+  background-color: #f8f9fa;
+}
