@@ -9,6 +9,7 @@
 users = 5.times.map do |i|
   User.create!(
     email: "user#{i}@email.com",
+    name: Faker::Name.name,
     password: "12345678",
     password_confirmation: "12345678",
   )

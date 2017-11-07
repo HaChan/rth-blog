@@ -1,6 +1,13 @@
 <h1 class="my-4"><%= @post.title %></h1>
 <div class="mb-8">
   <div class="card-body">
-    <p class="card-text"><%= @post.body %></p>
+    <p class="card-text"><%= simple_format(@post.body) %></p>
   </div>
+</div>
+<h3 class="my-4">Comments</h3>
+<div class="post-comments">
+  <%= render @post.comments.lastest %>
+</div>
+<div class="add-comment">
+  <%= render "comment_form", post: @post if logged_in? %>
 </div>

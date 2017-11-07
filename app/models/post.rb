@@ -1,14 +1,11 @@
 class Post < ApplicationRecord
-  UPDATE_PARAMS = [:title, :body]
-  belongs_to :user
+  include Postable
 
-  delegate :email, to: :user, prefix: true, allow_nil: true
+  UPDATE_PARAMS = %i[title body]
 
-  scope :lastest, ->{order(created_at: :desc)}
+  has_many :comments
 
-  def created_as_word
-    created_at.to_formatted_s(:long)
-  end
+  validates :title, :body, presence: true
 
   def shorten_body
     body.truncate(100)

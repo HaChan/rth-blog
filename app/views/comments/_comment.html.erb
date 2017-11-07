@@ -1,0 +1,13 @@
+<div class="comment">
+  <div class="comment-header d-flex justify-content-between">
+    <div class="user d-flex align-items-center">
+      <div class="image">
+        <img src="https://d19m59y37dris4.cloudfront.net/blog/1-1/img/user.svg" alt="..." class="img-fluid rounded-circle">
+      </div>
+      <div class="title"><strong><%= comment.user_name %></strong><span class="date"><%= time_as_word(comment.created_at) %></span></div>
+    </div>
+  </div>
+  <div class="comment-body">
+    <p><%= simple_format(comment.body) %></p>
+  </div>
+</div>
