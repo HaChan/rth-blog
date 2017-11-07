@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+users = 5.times.map do |i|
+  User.create!(
+    email: "user#{i}@email.com",
+    password: "12345678",
+    password_confirmation: "12345678",
+  )
+end
+
+40.times do
+  Post.create!(
+    title: Faker::Lorem.sentence,
+    body: Faker::Lorem.paragraphs(15).join("\n"),
+    user: users.sample
+  )
+end
