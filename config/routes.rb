@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   root to: "posts#index"
 
   resources :posts do
-    resources :comments
+    resources :comments, only: :create
+  end
+
+  namespace :api do
+    resources :posts, only: :index
   end
 end

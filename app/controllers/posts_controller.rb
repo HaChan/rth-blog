@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :require_access, only: %i[new create]
 
   def index
-    @posts = Post.lastest
+    @posts = Post.lastest.page(params[:page]).per(Post::PER_PAGE)
   end
 
   def new
@@ -21,6 +21,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments.lastest.page(params[:page]).per(Comment::PER_PAGE)
   end
 
   private

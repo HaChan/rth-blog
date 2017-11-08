@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   include Postable
 
   UPDATE_PARAMS = %i[title body]
+  PER_PAGE = 10
 
   has_many :comments
 
@@ -9,5 +10,12 @@ class Post < ApplicationRecord
 
   def shorten_body
     body.truncate(100)
+  end
+
+  def api_attributes
+    {
+      title: title,
+      body: body
+    }
   end
 end
