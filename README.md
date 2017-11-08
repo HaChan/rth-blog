@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Blog test app
 
-Things you may want to cover:
+## Api search
 
-* Ruby version
+Can search by title and body through params: `title_cont` and `body_cont`
 
-* System dependencies
+Sample request:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+http://url?title_cont=&body_cont=
+```
